@@ -15,7 +15,12 @@ class LoginData {
 
 class _MyApp extends State {
   LoginData _loginData = new LoginData();
-  GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  GlobalKey<FormState> _formKey = new GlobalKey<
+      FormState>(); // GlobalKey – уникальный ключ, который не повторяется нигде в текущем приложении
+  //такой ключ используется в качестве поля
+  //key у виджета, что необходимо для замены одного виджета другим в дереве
+  //виджетов. Если тип (runtimeType) и ключ (key) этих виджетов равны, то новый
+  //виджет заменяет старый, обновляя родительский элемент. В противном случае старый элемент удаляется из дерева объектов, а вместо него создается новый и вставляется в дерево
   @override
   Widget build(BuildContext inContext) {
     return MaterialApp(
